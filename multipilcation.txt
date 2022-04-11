@@ -1,0 +1,23 @@
+ lw 0 1 pro
+ lw 0 2 mc
+ lw 0 3 mp
+ lw 0 4 nandb
+ lw 0 5 check
+ lw 0 7 exit
+ nand 3 4 6
+ beq 6 5 L1
+ add 2 1 1
+L1 add 2 2 2
+ add 4 4 4
+ beq 4 7 end
+ nand 3 4 6
+ beq 6 5 L1
+ add 2 1 1
+ beq 0 0 L1
+end halt
+pro .fill 0
+mc .fill 32766
+mp .fill 10383
+nandb .fill 1
+check .fill 4294967295
+exit .fill 4294967296
